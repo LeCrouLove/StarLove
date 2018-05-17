@@ -1,0 +1,8 @@
+.window {
+height: 30vw;
+border-radius: 7px; 
+position: absolute;
+top: 5%;
+right: 10%;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}

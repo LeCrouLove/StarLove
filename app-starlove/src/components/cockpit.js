@@ -2,6 +2,7 @@ import React from 'react'
 import cockpitImg from '../cockpit.jpg'
 import StartBtn  from './cockpitBtn.js'
 import '../index.css'
+import ChatWindow from './chatWindow.js' 
 
 
 console.log(this.state)
@@ -13,9 +14,9 @@ const style = {
   height: '50vw',
 }
 
-const Cockpit =  ({handleCall}, props) =>  {
+const Cockpit =  ({handleChat}, props) =>  {
   return <div className="backgroundImg" style={style}>
-    <StartBtn handleCall={handleCall} />
+    <StartBtn handleChat={handleChat}/>
   </div>
 }
 

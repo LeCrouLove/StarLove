@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import Intro from './components/intro.js'
 import introText from './intro-text.txt'
 import Cockpit from './components/cockpit.js';
-import HandleQuestion from './components/questions.js';
+import StartBtn from './components/cockpitBtn.js'
+import ChatWindow from './components/chatWindow.js'
 
 class App extends Component {
   state = {
     introIsPlaying: true,
     introText: 'loading',
     isCalling: false,
+    isDisplay: false,
     characters: [],
     currentStep: 0,
     currentList: [],
@@ -43,6 +45,10 @@ class App extends Component {
     this.setState({ isCalling: true })
   }
 
+  handleChat = () => {
+    this.setState({ isDisplay: true })
+  }
+
   handleAnswer = filter => {
     this.setState({
       currentStep: this.state.currentStep + 1,
@@ -69,18 +75,17 @@ class App extends Component {
 
   render() {
     if (this.state.introIsPlaying) return <Intro text={this.state.introText} />
-    console.log(this.state.currentList)
-    console.log(this.state.isCalling)
-    const content = this.state.isCalling
-      ? <HandleQuestion
-          handleAnswer={this.handleAnswer}
-          {...this.state.questions[this.state.currentStep]} />
-      : undefined
+    
+    const showChatte = () => {
+      if (this.state.isDisplay) {
+        return <ChatWindow/>
+      }   
+    }
 
     return (
       <div>
-        <Cockpit handleCall={this.handleCall}/>
-        {content}
+        <Cockpit handleChat={this.handleChat}/>
+        {showChatte()}
       </div>
     )
   }
