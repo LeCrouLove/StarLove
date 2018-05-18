@@ -1,6 +1,6 @@
 import React from 'react';
 import Start from '../startbtn.png';
-import Quit from '../startbtn.png';
+import Quit from '../abort.jpeg';
 import '../btn.css'
 
 export const StartBtn = ({ handleCall }) => <img onClick={() => handleCall()} className="startBtn" src={Start} alt="creepy dude masturbating in starship"></img>

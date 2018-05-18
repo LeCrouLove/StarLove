@@ -1,0 +1,17 @@
+.question-btn{
+	position: relative;
+	z-index:1; 
+    top: -66.6vw;
+    right: -36.5vw;
+	border: 1px solid green;
+	background: rgba(255, 255, 255, 0);
+	color:greenyellow;
+	margin: 0 5px;
+	border-radius: 3px;
+}
+
+.content-answer{
+	background:aliceblue;
+	z-index:2;
+	bottom: 90vw;
+}
